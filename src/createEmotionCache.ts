@@ -18,7 +18,7 @@ export default function createEmotionCache() {
 
   return createCache({
     key: "mui-style",
-    stylisPlugins: [prefixer, rtlPlugin],
     insertionPoint,
+    stylisPlugins: [prefixer, rtlPlugin],
   });
 }

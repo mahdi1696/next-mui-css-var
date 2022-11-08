@@ -1,7 +1,10 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
+import Select from "@mui/material/Select"
 import Box from "@mui/material/Box";
 import ColorSchemePicker from "./ThemeToggleButton";
+import MenuItem from "@mui/material/MenuItem";
+import { Autocomplete, Chip, TextField } from "@mui/material";
 
 export default function Page() {
   return (
@@ -27,41 +30,35 @@ export default function Page() {
           <Button color="secondary">secondary</Button>
         </Box>
         <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4, mb: 1 }}>
-          <Button color="error" variant="contained">
-            error
-          </Button>
-          <Button color="error" variant="outlined">
-            error
-          </Button>
-          <Button color="error">error</Button>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={10}
+            label="Age"
+            size="small"
+            //onChange={handleChange}
+          >
+            <MenuItem value={10}>Ten</MenuItem>
+            <MenuItem value={20}>Twenty</MenuItem>
+            <MenuItem value={30}>Thirty</MenuItem>
+          </Select>
         </Box>
         <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4, mb: 1 }}>
-          <Button color="info" variant="contained">
-            info
-          </Button>
-          <Button color="info" variant="outlined">
-            info
-          </Button>
-          <Button color="info">info</Button>
+          <Chip label="badge" />
         </Box>
-        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4, mb: 1 }}>
-          <Button color="warning" variant="contained">
-            warning
-          </Button>
-          <Button color="warning" variant="outlined">
-            warning
-          </Button>
-          <Button color="warning">warning</Button>
-        </Box>
-        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4, mb: 1 }}>
-          <Button color="success" variant="contained">
-            success
-          </Button>
-          <Button color="success" variant="outlined">
-            success
-          </Button>
-          <Button color="success">success</Button>
-        </Box>
+        <Autocomplete
+          size="small"
+          disablePortal
+          options={["one", "two", "three"]}
+          onChange={(event, value) => {
+            console.log(value);
+          }}
+          sx={{
+            width: 200,
+            minWidth: 200,
+          }}
+          renderInput={(params) => <TextField {...params} label="input" />}
+        />
       </Box>
     </Box>
   );

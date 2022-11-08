@@ -21,10 +21,8 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 
 export default function ButtonAppBar() {
   const items = new Map([
-    ["صفحه اول", "/"],
-    ["صفحه دوم", "/two"],
-    ["صفحه سوم", "/three"],
-    ["درباره", "/about"],
+    ["index", "/"],
+    ["about", "/about"],
   ]);
   const [openDrawer, setOpenDrawer] = useState(false);
   const list = () => (
@@ -34,8 +32,6 @@ export default function ButtonAppBar() {
           <Link key={index} noLinkStyle href={path}>
             <ListItemButton
               onClick={() => {
-                // onItemClick(key);
-                console.log("drawer click");
                 setOpenDrawer(false);
               }}
             >
@@ -69,7 +65,7 @@ export default function ButtonAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            عنوان
+            Title
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>
