@@ -1,10 +1,10 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
-import Select from "@mui/material/Select"
+import Select from "@mui/material/Select";
 import Box from "@mui/material/Box";
 import ColorSchemePicker from "./ThemeToggleButton";
 import MenuItem from "@mui/material/MenuItem";
-import { Autocomplete, Chip, TextField } from "@mui/material";
+import { Autocomplete, Chip, FormControl, InputLabel, TextField } from "@mui/material";
 
 export default function Page() {
   return (
@@ -30,18 +30,21 @@ export default function Page() {
           <Button color="secondary">secondary</Button>
         </Box>
         <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4, mb: 1 }}>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={10}
-            label="Age"
-            size="small"
-            //onChange={handleChange}
-          >
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
-          </Select>
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">Age</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={10}
+              label="Age"
+              size="small"
+              //onChange={handleChange}
+            >
+              <MenuItem value={10}>Ten</MenuItem>
+              <MenuItem value={20}>Twenty</MenuItem>
+              <MenuItem value={30}>Thirty</MenuItem>
+            </Select>
+          </FormControl>
         </Box>
         <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4, mb: 1 }}>
           <Chip label="badge" />
